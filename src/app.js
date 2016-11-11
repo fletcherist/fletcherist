@@ -1,23 +1,38 @@
-const app = document.querySelector('#app')
+(function (){
+	console.log('vanya privet!')
+	const techbox = document.querySelector('#tech')
 
-for (var i = 0; i < 5; i++) {
-	const el = document.createElement('li')
-	const el2 = document.createElement('li')
+	const boxWords = [
+		'react.js', 'angular 1.x', 'd3.js', 'redux', 'dan abramov',
+		'canvas', 'audioCtx api', 'mobx', 'mongodb', 'nodejs', 'mean stack',
+		'express.js', 'koa.js', 'react-native'
+	]
 
-	const ul = document.createElement('ul')
-	ul.id = 'list'
+	const selectWord = () => {
+		return boxWords[Math.floor(Math.random() * boxWords.length)]
+	}
 
-	const text = document.createTextNode(Math.floor(Math.random() * 100).toString())
+	let latestWordIndex = undefined
 
-	app.appendChild(ul)
-
-	el.appendChild(text)
-
-
-	ul.appendChild(el)
-	ul.appendChild(el)
-	ul.appendChild(el)
-	ul.appendChild(el2)
-	ul.appendChild(el2)
-	ul.appendChild(el2)
-}
+	const iterateOverWord = word => {
+		if (word === latestWordIndex) {
+			return iterateOverWord(selectWord())
+		}
+		techbox.innerHTML = ''
+		let i = 0
+		let a = word.length
+		const interval = setInterval(() => {
+			techbox.innerHTML = techbox.innerHTML + word[i]
+			if (i === a - 1) {
+				
+				clearInterval(interval)
+				setTimeout(() => {
+					latestWordIndex = boxWords.indexOf(word)
+					iterateOverWord(selectWord())
+				}, 1000)
+			}
+			i++
+		}, 50)		
+	}
+	iterateOverWord(selectWord())
+})()

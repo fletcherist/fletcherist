@@ -1,12 +1,61 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-	test
-	<div id='app'></div>
-</body>
-<script src='./node_modules/d3/build/d3.min.js'></script>
-<script src='./src/app.js'></script>
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async src='./src/app.js'></script>
+    <title>fletcherist's website</title>
+    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "headline": "fletcherist website",
+        "datePublished": "2015-10-07T12:02:41Z",
+        "image": [
+          "logo.jpg"
+        ]
+      }
+    </script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+    <style amp-custom>
+    	body {
+    		font-size: 1.25rem;
+    		font-family: 'PT Mono';
+    	}
+    	h1 {
+    		margin-bottom: .5rem;
+    	}
+    	.container {
+    		padding: 1rem;
+    		max-width: 400px;
+    	}
+    	.name {
+    		/*font-s*/
+    	}
+
+    	small.surname {
+    		text-decoration: underline;
+    	}
+
+    	.tech__box {
+    		/*text-align: center;*/
+    		border: 1px solid black;
+    		border-bottom-width: 3px;
+    		padding: 10px;
+    		min-height: 25px;
+    	}
+    </style>
+  </head>
+  <body>
+  	<div class='container'>
+	    <h1>phil romanov</h1>
+	    <small class='surname'>yet another glamour developer</small>
+
+	    <h3>tech:</h3>
+	    <div class='tech__box' id='tech'>tech underground</div>
+	  </div>
+  </body>
 </html>
